@@ -108,20 +108,15 @@ namespace linq
 {
     66, 12, 8, 27, 82, 34, 7, 50, 19, 46, 81, 23, 30, 4, 68, 14
 };
-            foreach (int num in wheresSquaredo)
-            {
-                if (Math.Sqrt(num) % 1 == 0)
-                {
-                    Console.WriteLine($"Yay the Number {num} is a perfect square");
-                }
-                else
-                {
-                    Console.WriteLine($"Negative Ghost Rider {num} is not a perfect square");
-                }
-            }
+    IEnumerable<int> squareStop = wheresSquaredo.TakeWhile(num => Math.Sqrt(num) % 1 != 0);
+        foreach(int num in squareStop){
+            Console.WriteLine(num);
+        }
+    }
+            
 
-                
+
 
         }
     }
-}
+
